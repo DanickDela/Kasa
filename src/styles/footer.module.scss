@@ -1,0 +1,34 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 209px;
+  &__logo {
+    padding-top: 66px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    img {
+      width: 122px;
+      height: 40px;
+      fill: white;
+    }
+  }
+  p {
+    margin-top: 29px;
+    color: white;
+    font-size: 24px;
+    @media (max-width: variables.$smartphone) {
+      font-size: 12px;
+      width: 133px;
+    }
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}

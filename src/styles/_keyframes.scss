@@ -1,0 +1,46 @@
+@keyframes menu-entree {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  } 
+  95% {
+    opacity: 0.1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Apparition du site après le loader */
+@keyframes showSite {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
