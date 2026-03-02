@@ -14,7 +14,7 @@
   height: 52px;
   border-radius: 5px;
   padding: 10px 20px 10px 15px;
-  @media (min-width: variables.$smartphone) {
+  @media (max-width: variables.$smartphone) {
     padding: 10px 10px;
     height: 30px;
   }
@@ -28,14 +28,13 @@
     filter: brightness(0) invert(1);
   }
   &__title {
-    width: 956px;
     font-size: 24px;
+    font-weight: variables.$bold;
     @media (max-width: variables.$smartphone) {
       width: 293px;
       font-size: 13px;
     }
-    font-weight: 700;
-    line-height: 1.5;
+    line-height: 142.6%;
   }
 
   &__toggle {
@@ -46,15 +45,15 @@
     p {
       color: black;
       margin: 0;
-      padding: 20px 20px;
+      padding: 25px 28px 20px 20px;
       pointer-events: none;
       font-size: 18px;
+      font-weight: variables.$regular;
       @media (max-width: variables.$smartphone) {
         padding: 13px 20px 19px 20px;
         font-size: 12px;
       }
-      font-weight: 400;
-      line-height: 1.5;
+      line-height: 142.6%;
       letter-spacing: 0;
     }
   }

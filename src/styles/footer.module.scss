@@ -4,7 +4,7 @@
 @import "./common.scss";
 
 .footer {
-  background-color: black;
+  background-color: variables.$black-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,18 +17,19 @@
     img {
       width: 122px;
       height: 40px;
-      fill: white;
+      fill: variables.$white-color;
     }
   }
   p {
     margin-top: 29px;
-    color: white;
+    color: variables.$white-color;
     font-size: 24px;
     @media (max-width: variables.$smartphone) {
       font-size: 12px;
       width: 133px;
     }
-    font-weight: 500;
+    text-align: center;
+    font-weight: variables.$medium;
     line-height: 1.5;
   }
 }

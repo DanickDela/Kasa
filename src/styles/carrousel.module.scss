@@ -1,0 +1,52 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.carrousel {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  @media (max-width: variables.$smartphone) {
+    height: 255px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    @media (max-width: variables.$smartphone) {
+      border-radius: 10px;
+    }
+  }
+
+  &_arrowleft,
+  &_arrowright {
+    position: absolute;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 0;
+  }
+  &_arrowleft {
+    left: 0px;
+  }
+  &_arrowright {
+    right: 0px;
+  }
+  &__counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: variables.$white-color;
+    font-size: 18px;
+    font-weight: variables.$medium;
+    line-height: 142.6%;
+    @media (max-width: variables.$smartphone) {
+      visibility: hidden;
+    }
+  }
+}

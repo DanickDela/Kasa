@@ -13,16 +13,16 @@ import Footer from "./components/Footer/Footer";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div className="container">
-        <Header />
+      <Header />
+      <main className="main">
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/apropos" element={<Apropos />} />
-          <Route path="/annonce" element={<Annonce />} />
+          <Route path="/annonce/:id" element={<Annonce />} />
           <Route path="*" element={<Erreur />} />
         </Routes>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>,
 );

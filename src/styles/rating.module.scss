@@ -1,0 +1,31 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.star {
+  display: flex;
+
+  align-items: center;
+  gap: 50px;
+  height: 100%;
+  @media (max-width: variables.$smartphone) {
+    width: 18px;
+    height: 18px;
+  }
+  &__filled,
+  &__empty {
+    font-size: 24px;
+    line-height: 1;
+    @media (max-width: variables.$smartphone) {
+      font-size: 13px;
+    }
+  }
+  &__filled {
+    color: variables.$primary-color;
+  }
+
+  &__empty {
+    color: #e3e3e3;
+  }
+}

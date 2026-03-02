@@ -1,0 +1,99 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.description {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media (max-width: variables.$smartphone) {
+    grid-template-columns: 1fr;
+  }
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    @media (max-width: variables.$smartphone) {
+      margin-top: 15px;
+    }
+    &__title {
+      font-size: 36px;
+      font-weight: variables.$medium;
+      color: variables.$primary-color;
+      margin-top: 6px;
+      @media (max-width: variables.$smartphone) {
+        font-size: 18px;
+        margin-top: 0px;
+      }
+      line-height: 142.6%;
+    }
+    &__location {
+      font-size: 18px;
+      font-weight: variables.$medium;
+      color: variables.$black-color;
+      @media (max-width: variables.$smartphone) {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      line-height: 142.6%;
+    }
+    &__tag {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      margin-bottom: 24px;
+      height: 25px;
+      @media (max-width: variables.$smartphone) {
+        margin-top: 10px;
+        height: 18px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 24px;
+    @media (max-width: variables.$smartphone) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: 16px;
+      margin-bottom: 13px;
+    }
+    &__rating {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 21px;
+      width: 196px;
+      height: 36px;
+      @media (max-width: variables.$smartphone) {
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 0px;
+      }
+    }
+  }
+}
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 76px;
+  @media (max-width: variables.$smartphone) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.equipList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

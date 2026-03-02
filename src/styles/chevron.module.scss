@@ -1,0 +1,13 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.chevron {
+  height: 96px;
+  width: 96px;
+  @media (max-width: variables.$smartphone) {
+    height: 24px;
+    width: 24px;
+  }
+}

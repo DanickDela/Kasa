@@ -1,5 +1,5 @@
 import "../../styles/common.scss";
-import styles from "../../styles/card.module.scss";
+import styles from "../../styles/accueil.module.scss";
 import Banner from "../../components/Banner/Banner";
 import Card from "../../components/Card/Card";
 import data from "../../datas/logements.json";

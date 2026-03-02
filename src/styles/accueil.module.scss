@@ -1,0 +1,24 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+
+.card__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 colonnes
+  @media (max-width: variables.$smartphone) {
+    grid-template-columns: 1fr; // 1 colonne sur smartphone
+  }
+  background-color: #f6f6f6;
+  padding: 56px 50px 43px 50px;
+  margin-top: 43px;
+  @media (max-width: variables.$smartphone) {
+    padding: 0px;
+    margin-top: 22px;
+    background-color: white;
+  }
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+  border-radius: 25px;
+}

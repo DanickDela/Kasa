@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
+import styles from "../../styles/chevron.module.scss";
 
 export default function Chevron({
   direction = "right",
   color = "currentColor",
-  size = 20,
 }) {
   const rotations = {
     right: "0deg",
@@ -14,9 +14,8 @@ export default function Chevron({
 
   return (
     <svg
+      className={styles.chevron}
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}

@@ -6,9 +6,6 @@ import Chevron from "../Chevron/Chevron";
 function Collapse({ id, aboutTitle, aboutText, className }) {
   const STORAGE_KEY = `collapse_${id}`;
 
-  console.log(localStorage.getItem(STORAGE_KEY));
-  console.log(STORAGE_KEY);
-
   // lecture dulocalStorage au memoent de l'initialisation
   const [isOpen, setIsOpen] = useState(
     () => localStorage.getItem(STORAGE_KEY) === "true",
@@ -24,7 +21,7 @@ function Collapse({ id, aboutTitle, aboutText, className }) {
       <div className={styles.rulesagency} onClick={() => setIsOpen(!isOpen)}>
         <h2 className={styles.rulesagency__title}>{aboutTitle}</h2>
 
-        <Chevron direction={isOpen ? "up" : "down"} color="white" size={32} />
+        <Chevron direction={isOpen ? "up" : "down"} color="white" />
       </div>
 
       {isOpen && (
@@ -40,6 +37,7 @@ Collapse.propTypes = {
   id: PropTypes.string.isRequired,
   aboutTitle: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Collapse;

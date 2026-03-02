@@ -1,0 +1,23 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+.tag {
+  font-size: 14px;
+  font-weight: variables.$bold;
+  color: variables.$white-color;
+  background-color: variables.$primary-color;
+  height: 100%;
+  min-width: 115px;
+  width: auto;
+  text-align: center;
+  list-style: none;
+  padding: 3px 5px 2px 5px;
+  line-height: 142.6%;
+  border-radius: 10px;
+  @media (max-width: variables.$smartphone) {
+    font-size: 10px;
+    min-width: 84px;
+  }
+}

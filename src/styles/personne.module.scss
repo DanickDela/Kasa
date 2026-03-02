@@ -1,0 +1,45 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@import "./common.scss";
+
+// Styles for the Person component
+.personne {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  text-align: right;
+  height: 64px;
+
+  @media (max-width: variables.$smartphone) {
+    height: 33px;
+    gap: 11px;
+  }
+  margin: 0;
+  color: red;
+
+  // Styles for the name inside the Person component
+  &__name {
+    font-size: 18px;
+    font-weight: variables.$medium;
+    line-height: 142.6%;
+    text-align: right;
+    @media (max-width: variables.$smartphone) {
+      font-size: 12px;
+    }
+  }
+  &__avatar {
+    width: 64px;
+    height: 64px;
+    margin-right: 3px;
+    border-radius: 32px;
+    @media (max-width: variables.$smartphone) {
+      width: 32px;
+      height: 32px;
+      margin-right: 0px;
+    }
+    object-fit: cover;
+  }
+}
