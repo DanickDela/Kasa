@@ -1,24 +1,55 @@
+/**
+ * ============================================================================
+ * CARD CONTAINER MODULE
+ * ============================================================================
+ *
+ * Conteneur principal des cartes (page d’accueil).
+ *
+ * Responsabilités :
+ * - Organisation des cartes en grille responsive
+ * - Gestion des espacements (gap + padding)
+ * - Adaptation mobile (1 colonne)
+ * - Gestion du fond et du border-radius
+ *
+ * Layout :
+ * - Desktop : 3 colonnes égales (grid)
+ * - Mobile  : 1 colonne
+ *
+ * ============================================================================
+ */
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
+@use "./common";
 
 .card__container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 colonnes
+  gap: 60px;
   @media (max-width: variables.$smartphone) {
     grid-template-columns: 1fr; // 1 colonne sur smartphone
+    gap: 20px;
   }
-  background-color: #f6f6f6;
+  background-color: variables.$gray-color;
   padding: 56px 50px 43px 50px;
   margin-top: 43px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     padding: 0px;
     margin-top: 22px;
-    background-color: white;
+    background-color: variables.$white-color;
   }
   height: 100%;
   width: 100%;
-  gap: 20px;
   border-radius: 25px;
+}
+
+.mobileBreak {
+  display: none;
+}
+
+@include mixins.mobile {
+  .mobileBreak {
+    display: block;
+  }
 }

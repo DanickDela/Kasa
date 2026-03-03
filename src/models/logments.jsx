@@ -1,10 +1,33 @@
 /**
- * Représente un logement Kasa
+ * Classe représentant un logement Kasa.
+ *
+ * Encapsule les données brutes issues du JSON
+ *
+ * Objectifs :
+ * - Centraliser la transformation des données
+ * - Fournir des valeurs par défaut
+ * - Garantir un typage cohérent (ex : rating en Number)
+ * - Préparer les données pour l’affichage
+ *
+ * @class
  */
 export class LogementService {
   /**
-   * @param {object} acc - Données brutes du JSON
+   * Crée une instance de LogementService.
+   *
+   * @param {Object} acc - Données brutes du logement (JSON)
+   * @param {string} acc.id - Identifiant unique du logement
+   * @param {string} acc.title - Titre du logement
+   * @param {string} acc.cover - Image principale
+   * @param {string[]} [acc.pictures] - Liste des images
+   * @param {string} [acc.description] - Description du logement
+   * @param {{name: string, picture: string}} [acc.host] - Informations hôte
+   * @param {number|string} [acc.rating] - Note du logement
+   * @param {string} [acc.location] - Localisation
+   * @param {string[]} [acc.equipments] - Liste des équipements
+   * @param {string[]} [acc.tags] - Liste des tags
    */
+
   constructor(acc) {
     this._id = acc.id;
     this._title = acc.title;

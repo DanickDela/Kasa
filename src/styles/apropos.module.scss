@@ -1,17 +1,35 @@
+/**
+ * ============================================================================
+ * APROPOS MODULE
+ * ============================================================================
+ *
+ * Styles de la page À propos.
+ *
+ * Responsabilités :
+ * - Centrage des sections Collapse
+ * - Gestion des espacements verticaux
+ * - Adaptation responsive
+ *
+ * Structure :
+ * - .ServContainer : conteneur principal des sections
+ * - .ServItem : élément individuel (Collapse)
+ *
+ * ============================================================================
+ */
+@use "./common";
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
 
 .ServContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin: 38px 108.5px 38px 108.5px;
-  @media (max-width: variables.$smartphone) {
+  margin: 38px 108.5px 0px 108.5px;
+  @include mixins.mobile {
     gap: 20px;
-    margin: 20px 0px 19px 0px;
+    margin: 20px 0px 0px 0px;
   }
 }
 

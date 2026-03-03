@@ -20,7 +20,7 @@ body {
   width: 100%;
   font-family: "Montserrat", sans-serif;
   max-width: variables.$desktop;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     max-width: variables.$smartphone;
   }
   margin: 0 auto;
@@ -31,14 +31,14 @@ body {
 .main {
   padding: 50px 100px 50px 100px;
   margin-inline: auto;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     padding: 27px 20px 27px 20px;
   }
 }
 
 header {
   margin: 45px 100px 0px 100px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     margin: 20px 20px 0px 20px;
   }
 }

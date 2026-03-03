@@ -1,6 +1,7 @@
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
+@use "./common";
 
 .card {
   display: flex;
@@ -12,7 +13,7 @@
   &__image {
     width: 100%;
     height: 340px;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       height: 255px;
     }
     -o-object-fit: cover;
@@ -30,7 +31,7 @@
     overflow-wrap: break-word;
     color: white;
     top: 268px;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       top: 188px;
     }
     left: 20px;

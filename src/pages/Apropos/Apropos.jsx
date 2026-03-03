@@ -6,6 +6,26 @@ import aproposBanner from "../../assets/apropos-banner.png";
 import styles from "../../styles/apropos.module.scss";
 import Collapse from "../../components/collapse/collapse";
 
+/**
+ * Page À propos
+ *
+ * Affiche :
+ * - Une bannière spécifique à la page
+ * - Une liste de sections repliables (Collapse)
+ *
+ * Fonctionnement :
+ * - Les données JSON sont transformées via ModelFactory
+ * - Chaque élément génère un composant Collapse
+ *
+ * Architecture :
+ * - Séparation des données (abouttext.json)
+ * - Transformation métier (ModelFactory)
+ * - Présentation via composants réutilisables (Banner, Collapse)
+ *
+ * @component
+ * @returns {JSX.Element} Page À propos contenant la bannière et les sections descriptives
+ */
+
 function Apropos() {
   const service = ModelFactory.createAproposServices(data);
 

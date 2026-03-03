@@ -1,7 +1,31 @@
+/**
+ * ============================================================================
+ * PERSONNE MODULE
+ * ============================================================================
+ *
+ * Composant Personne (affichage hôte).
+ *
+ * Responsabilités :
+ * - Affichage de l’avatar
+ * - Affichage du prénom et nom sur deux lignes
+ * - Alignement à droite (layout inversé)
+ * - Adaptation responsive mobile
+ *
+ * Structure :
+ * - .personne : conteneur principal (figure)
+ * - .personne__avatar : image de profil
+ * - .personne__name : nom formaté
+ *
+ * Layout :
+ * - Flexbox en row-reverse pour placer l’avatar à droite en mode mobile
+ *
+ * ============================================================================
+ */
+
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
+@use "./common";
 
 // Styles for the Person component
 .personne {
@@ -13,7 +37,7 @@
   text-align: right;
   height: 64px;
 
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     height: 33px;
     gap: 11px;
   }
@@ -26,7 +50,7 @@
     font-weight: variables.$medium;
     line-height: 142.6%;
     text-align: right;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       font-size: 12px;
     }
   }
@@ -35,7 +59,7 @@
     height: 64px;
     margin-right: 3px;
     border-radius: 32px;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       width: 32px;
       height: 32px;
       margin-right: 0px;

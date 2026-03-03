@@ -1,7 +1,24 @@
+/**
+ * ============================================================================
+ * TAG MODULE
+ * ============================================================================
+ *
+ * Composant Tag (étiquette).
+ *
+ * Responsabilités :
+ * - Affichage d’un label visuel associé à un logement
+ * - Gestion des dimensions minimales
+ * - Adaptation responsive
+ *
+ * Structure :
+ * - .tag : élément <li> stylisé
+ *
+ * ============================================================================
+ */
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
+@use "./common";
 
 .tag {
   font-size: 14px;
@@ -16,7 +33,7 @@
   padding: 3px 5px 2px 5px;
   line-height: 142.6%;
   border-radius: 10px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     font-size: 10px;
     min-width: 84px;
   }

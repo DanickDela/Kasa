@@ -6,9 +6,35 @@ import data from "../../datas/logements.json";
 import ModelFactory from "../../models/modelfactory.jsx";
 import imgBanner from "../../assets/banner.png";
 
+/**
+ * Page Accueil
+ *
+ * Affiche :
+ * - Une bannière principale avec slogan
+ * - La liste des logements sous forme de cartes
+ *
+ * Fonctionnement :
+ * - Les données JSON sont transformées via ModelFactory
+ * - Chaque logement est instancié via le modèle métier
+ * - Les cartes sont générées dynamiquement avec .map()
+ *
+ * Architecture :
+ * - Séparation données (JSON)
+ * - Transformation métier (ModelFactory + LogementService)
+ * - Présentation via composants (Banner, Card)
+ *
+ * @component
+ * @returns {JSX.Element} Page d’accueil contenant la bannière et la grille des logements
+ */
+
 function Accueil() {
   const logements = ModelFactory.createLogements(data);
-  const slogan = "Chez vous, partout et ailleurs";
+  const slogan = (
+    <>
+      Chez vous, <span className={styles.mobileBreak}> </span>
+      partout et ailleurs
+    </>
+  );
 
   return (
     <>

@@ -1,33 +1,44 @@
 import PropTypes from "prop-types";
 import styles from "../../styles/chevron.module.scss";
 
-export default function Chevron({
+/**
+ * Composant Chevron
+ *
+ * Icône SVG réutilisable représentant une flèche orientable.
+ * Permet de définir :
+ * - la direction (left, right, up, down)
+ * - la couleur du trait
+ * - des classes supplémentaires (gestion contextuelle de la taille)
+ *
+ * La rotation est gérée via des classes CSS BEM
+ * pour séparer la logique React du style.
+ *
+ * @component
+ *
+ * @param {Object} props - Propriétés du composant
+ * @param {"left"|"right"|"up"|"down"} [props.direction="right"] - Direction de la flèche
+ * @param {string} [props.color="currentColor"] - Couleur du stroke SVG
+ * @param {string} [props.className=""] - Classe CSS additionnelle (ex: taille contextuelle)
+ *
+ * @returns {JSX.Element} Icône Chevron SVG
+ */
+
+function Chevron({
   direction = "right",
   color = "currentColor",
+  className = "",
 }) {
-  const rotations = {
-    right: "0deg",
-    left: "180deg",
-    up: "-90deg",
-    down: "90deg",
-  };
-
   return (
     <svg
-      className={styles.chevron}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      viewBox="0 0 15 15"
       fill="none"
       stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      style={{
-        transform: `rotate(${rotations[direction]})`,
-        transition: "transform 0.3s ease",
-      }}
+      className={`${styles.chevron} ${styles[`chevron--${direction}`]} ${className}`}
     >
-      <polyline points="9 18 15 12 9 6" />
+      <path d="M6.158 3.135l3.75 4-3.75 4" />
     </svg>
   );
 }
@@ -35,5 +46,7 @@ export default function Chevron({
 Chevron.propTypes = {
   direction: PropTypes.oneOf(["left", "right", "up", "down"]),
   color: PropTypes.string,
-  size: PropTypes.number,
+  className: PropTypes.string,
 };
+
+export default Chevron;

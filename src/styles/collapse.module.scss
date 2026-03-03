@@ -1,22 +1,41 @@
+/**
+ * ============================================================================
+ * COLLAPSE MODULE
+ * ============================================================================
+ *
+ * Composant Collapse (section dépliable).
+ *
+ * Structure :
+ * - .rulesagency : en-tête cliquable 
+ * - .rulesagency__title : texte du titre
+ * - .rulesagency__toggle : contenu affiché lorsque le collapse est ouvert
+ *
+ * Responsabilités :
+ * - Gestion visuelle de l’en-tête (layout flex, couleur primaire)
+ * - Gestion du bloc de contenu déplié
+ *
+ * ============================================================================
+ */
+
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
+@use "./common";
 
 .rulesagency {
-  background: variables.$primary-color;
-  color: white;
-  cursor: pointer;
+  background-color: variables.$primary-color;
+  color: variables.$white-color;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 52px;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 20px 10px 15px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     padding: 10px 10px;
     height: 30px;
+    border-radius: 5px;
   }
   width: 100%;
   &__arrowup {
@@ -28,33 +47,44 @@
     filter: brightness(0) invert(1);
   }
   &__title {
-    font-size: 24px;
+    font-size: var(--title-size-desktop, 24px);
     font-weight: variables.$bold;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       width: 293px;
-      font-size: 13px;
+      font-size: var(--title-size-mobile, 13px);
     }
     line-height: 142.6%;
   }
 
   &__toggle {
-    color: variables.$primary-color;
-    background: #f6f6f64d;
+    background-color: #f6f6f64d;
     border-radius: 5px;
 
     p {
-      color: black;
+      color: variables.$black-color;
       margin: 0;
       padding: 25px 28px 20px 20px;
       pointer-events: none;
       font-size: 18px;
       font-weight: variables.$regular;
-      @media (max-width: variables.$smartphone) {
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: collapseFadeIn 350ms ease-out forwards;
+
+      @include mixins.mobile {
         padding: 13px 20px 19px 20px;
         font-size: 12px;
       }
       line-height: 142.6%;
       letter-spacing: 0;
     }
+  }
+}
+
+.collapse__chevron {
+  width: 32px;
+
+  @include mixins.mobile {
+    width: 24px;
   }
 }

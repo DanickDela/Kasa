@@ -1,15 +1,32 @@
+/**
+ * ============================================================================
+ * RATING MODULE
+ * ============================================================================
+ *
+ * Composant d’affichage des étoiles de notation.
+ *
+ * Responsabilités :
+ * - Afficher des étoiles pleines ou vides
+ * - Adapter la taille en responsive
+ * - Gérer la couleur via variables SCSS
+ *
+ * Structure :
+ * - .star : conteneur d’une étoile
+ * - .star__filled : étoile active
+ * - .star__empty : étoile inactive
+ *
+ * ============================================================================
+ */
+@use "./common";
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
 
 .star {
   display: flex;
-
   align-items: center;
-  gap: 50px;
   height: 100%;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     width: 18px;
     height: 18px;
   }
@@ -17,7 +34,7 @@
   &__empty {
     font-size: 24px;
     line-height: 1;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       font-size: 13px;
     }
   }

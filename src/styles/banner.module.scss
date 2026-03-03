@@ -1,12 +1,34 @@
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
+@use "./common";
+
+/**
+ * ============================================================================
+ * BANNER MODULE
+ * ============================================================================
+ *
+ * Composant Banner.
+ *
+ * Responsabilités :
+ * - Affiche une image de fond (background-image injecté via React)
+ * - Applique un overlay via linear-gradient côté composant
+ * - Centre un slogan au-dessus de l’image
+ *
+ * Responsive :
+ * - Desktop : hauteur 223px / border-radius 25px
+ * - Mobile  : hauteur 111px / border-radius 10px
+ *
+ * Le composant utilise Flexbox pour centrer le contenu.
+ *
+ * ============================================================================
+ */
 
 .banner {
   width: 100%;
   height: 223px;
   border-radius: 25px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     height: 111px;
     border-radius: 10px;
   }
@@ -19,7 +41,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     font-size: 24px;
     padding-left: 16px;
     justify-content: flex-start;
@@ -27,7 +49,7 @@
 
   &__slogan {
     font-size: 48px;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       font-size: 24px;
     }
     font-weight: variables.$bold;

@@ -1,13 +1,62 @@
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
+@use "./common";
+
+/**
+ * ============================================================================
+ * CHEVRON MODULE
+ * ============================================================================
+ *
+ * Composant icône Chevron (SVG).
+ *
+ * Responsabilités :
+ * - Gère uniquement la rotation (direction)
+ * - Ne gère pas la taille contextuelle
+ *
+ * La taille est définie par les composants parents
+ * (Collapse, Carrousel) afin de respecter la séparation
+ * des responsabilités et faciliter la réutilisabilité.
+ *
+ * Directions disponibles :
+ * - right (par défaut)
+ * - left  (rotation 180°)
+ * - up    (-90°)
+ * - down  (90°)
+ *
+ * Responsive :
+ * - Collapse : 32px desktop / 24px mobile
+ * - Carrousel : 96px desktop / 24px mobile
+ *
+ * ============================================================================
+ */
 
 .chevron {
-  height: 96px;
+  transition: transform 0.3s ease;
+
+  &--left {
+    transform: rotate(180deg);
+  }
+  &--up {
+    transform: rotate(-90deg);
+  }
+  &--down {
+    transform: rotate(90deg);
+  }
+}
+
+.collapse__chevron {
+  width: 32px;
+
+  @include mixins.mobile {
+    width: 24px;
+  }
+}
+
+.carroussel__chevron {
   width: 96px;
-  @media (max-width: variables.$smartphone) {
-    height: 24px;
+
+  @include mixins.mobile {
     width: 24px;
   }
 }

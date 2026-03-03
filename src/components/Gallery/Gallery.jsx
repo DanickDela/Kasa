@@ -3,7 +3,29 @@ import PropTypes from "prop-types";
 import styles from "../../styles/carrousel.module.scss";
 import Chevron from "../Chevron/Chevron";
 
-function Carrousel({ slides, title = "Logement" }) {
+/**
+ * Composant gallery
+ *
+ * Affiche une galerie d’images avec navigation circulaire
+ * (image suivante / précédente).
+ *
+ * Fonctionnalités :
+ * - Navigation via boutons gauche/droite
+ * - Boucle infinie (retour à la première image après la dernière)
+ * - Compteur d’images
+ * - Accessibilité via aria-label
+ * - Masque les contrôles si une seule image
+ *
+ * @component
+ *
+ * @param {Object} props - Propriétés du composant
+ * @param {string[]} props.slides - Tableau des URLs des images
+ * @param {string} [props.title="Logement"] - Titre utilisé pour l’accessibilité
+ *
+ * @returns {JSX.Element|null} Carrousel ou null si aucune image
+ */
+
+function Gallery({ slides, title = "Logement" }) {
   const [current, setCurrent] = useState(0);
   const Nbpictures = slides?.length ?? 0;
 
@@ -30,7 +52,11 @@ function Carrousel({ slides, title = "Logement" }) {
           onClick={previousSlide}
           aria-label="Image précédente"
         >
-          <Chevron direction="left" color="white" size={96} />
+          <Chevron
+            direction="left"
+            color="white"
+            className={styles.carrousel__chevron}
+          />
         </button>
       )}
 
@@ -41,7 +67,11 @@ function Carrousel({ slides, title = "Logement" }) {
           onClick={nextSlide}
           aria-label="Image suivante"
         >
-          <Chevron direction="right" color="white" size={96} />
+          <Chevron
+            direction="right"
+            color="white"
+            className={styles.carrousel__chevron}
+          />
         </button>
       )}
 
@@ -60,9 +90,9 @@ function Carrousel({ slides, title = "Logement" }) {
   );
 }
 
-Carrousel.propTypes = {
+Gallery.propTypes = {
   slides: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string,
 };
 
-export default Carrousel;
+export default Gallery;

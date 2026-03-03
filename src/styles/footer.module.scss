@@ -1,8 +1,30 @@
+/**
+ * ============================================================================
+ * FOOTER MODULE
+ * ============================================================================
+ *
+ * Composant Footer global de l’application.
+ *
+ * Responsabilités :
+ * - Affichage du logo 
+ * - Affichage des mentions légales
+ * - Alignement vertical centré
+ *
+ * Structure :
+ * - .footer : conteneur principal
+ * - .footer__logo : zone contenant le logo
+ *
+ * ============================================================================
+ */
 @use "../styles/_variables";
 @use "../styles/_mixins";
 @use "../styles/_keyframes";
-@import "./common.scss";
+@use "./common";
 
+/**
+ * Block : Footer
+ * Pied de page global avec fond noir.
+ */
 .footer {
   background-color: variables.$black-color;
   display: flex;
@@ -24,12 +46,12 @@
     margin-top: 29px;
     color: variables.$white-color;
     font-size: 24px;
-    @media (max-width: variables.$smartphone) {
+    @include mixins.mobile {
       font-size: 12px;
       width: 133px;
     }
     text-align: center;
     font-weight: variables.$medium;
-    line-height: 1.5;
+    line-height: 142.6%;
   }
 }

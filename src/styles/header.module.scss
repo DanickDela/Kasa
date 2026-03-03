@@ -1,50 +1,82 @@
-@use "../styles/variables";
-@use "../styles/mixins";
-@use "../styles/keyframes";
-@import "./common.scss";
+/**
+ * ============================================================================
+ * HEADER MODULE
+ * ============================================================================
+ *
+ * Composant Header global de l’application.
+ *
+ * Responsabilités :
+ * - Affichage du logo
+ * - Navigation principale (Accueil / À propos)
+ *
+ * Layout :
+ * - Flexbox horizontal
+ * - Espacement via gap
+ * - Alignement vertical centré
+ *
+ * ============================================================================
+ */
 
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "./common";
+
+/**
+ * Block : Header
+ * Conteneur principal du haut de page.
+ */
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 68px;
-  @media (max-width: variables.$smartphone) {
+  @include mixins.mobile {
     height: 46.88px;
   }
+  /**
+   * Élément : navigation principale
+   */
   &__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 57px;
-    width: 309px;
     height: 34px;
     font-size: 24px;
-    font-weight: 500;
-    @media (max-width: variables.$smartphone) {
+    font-weight: variables.$medium;
+    @include mixins.mobile {
       justify-content: flex-end;
       align-items: center;
       gap: 26px;
       font-size: 12px;
+      text-transform: uppercase;
     }
-    color: red;
     text-align: end;
+    /**
+     * Liens de navigation
+     */
     a {
       text-decoration: none;
-      color: black;
-      &:hover {
+      color: variables.$black-color;
+      &[aria-current="page"] {
         text-decoration: underline;
       }
     }
   }
+  /**
+   * Élément : logo
+   */
   &__logo {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     img {
-      width: 145px;
+      width: 210px;
       height: 100%;
       display: block;
+      @include mixins.mobile {
+        width: 145px;
+      }
     }
   }
 }

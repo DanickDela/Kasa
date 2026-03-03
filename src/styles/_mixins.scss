@@ -1,18 +1,7 @@
+@use "_variables";
 
-/*Mixins*/
-
-@mixin font-roboto ($size, $weight:400, $color:black)
-{
-    font-family: 'Roboto';
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
-}
-
-@mixin font-shrik ($size, $weight:400, $color:black)
-{
-    font-family: "Shrikhand";
-    font-size: $size;
-    font-weight: $weight;
-    color: $color;
+@mixin mobile {
+  @media (max-width: variables.$smartphone) {
+    @content;
+  }
 }
