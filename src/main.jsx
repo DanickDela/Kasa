@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./styles/common.scss";
 
 import Accueil from "./pages/Accueil/Accueil";
@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/annonce/:id" element={<Annonce />} />
           <Route path="/404" element={<Erreur />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </main>
       <Footer />
