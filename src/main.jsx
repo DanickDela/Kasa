@@ -9,6 +9,27 @@ import Annonce from "./pages/Annonce/Annonce";
 import Erreur from "./pages/Erreur/Erreur";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+/**
+ * ============================================================================
+ * POINT D'ENTRÉE DE L'APPLICATION REACT
+ * ============================================================================
+ *
+ * Ce fichier initialise l'application React et configure le système de routage.
+ * Il monte l'application dans l'élément HTML ayant l'id "root".
+ *
+ * Fonctionnalités :
+ * - Configuration du Router avec react-router-dom
+ * - Déclaration des routes principales
+ * - Affichage des composants globaux Header et Footer
+ *
+ * Routes :
+ * - "/" → Page d'accueil
+ * - "/apropos" → Page À propos
+ * - "/annonce/:id" → Page détail d'une annonce
+ * - "*" → Page d'erreur 404
+ *
+ * @file main.jsx
+ */
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
