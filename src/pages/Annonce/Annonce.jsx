@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import styles from "../../styles/annonce.module.scss";
 import data from "../../datas/logements.json";
-import Collapse from "../../components/collapse/collapse";
+import Collapse from "../../components/Collapse/Collapse";
 import Gallery from "../../components/Gallery/Gallery";
 import Personne from "../../components/Personne/Personne";
 import Tag from "../../components/Tag/Tag";

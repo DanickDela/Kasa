@@ -4,7 +4,7 @@ import data from "../../datas/abouttext.json";
 import ModelFactory from "../../models/modelfactory.jsx";
 import aproposBanner from "../../assets/apropos-banner.png";
 import styles from "../../styles/apropos.module.scss";
-import Collapse from "../../components/collapse/collapse";
+import Collapse from "../../components/Collapse/Collapse";
 
 /**
  * Page À propos
