@@ -1,18 +1,27 @@
-<script>
-  (function () {
-    const redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    if (redirect && redirect !== location.href) {
-      history.replaceState(null, null, redirect);
-    }
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    const l = window.location;
-    if (l.search[1] === "/") {
-      const decoded = l.search.slice(1).replace(/~and~/g, "&");
+    <title>Kasa</title>
 
-      const newUrl = l.pathname.slice(0, -1) + decoded + l.hash;
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search.slice(1).replace(/~and~/g, "&");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          );
+        }
+      })(window.location);
+    </script>
+  </head>
 
-      window.history.replaceState(null, null, newUrl);
-    }
-  })();
-</script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
