@@ -4,6 +4,5 @@ import eslint from "vite-plugin-eslint";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Kasa/",
   plugins: [react(), eslint()],
 });

@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Kasa">
+    <BrowserRouter>
       <Header />
       <main className="main">
         <Routes>
