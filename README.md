@@ -2,7 +2,7 @@
 
 Kasa, une plateforme de location d’appartements entre particuliers en France. Projet réalisé dans le cadre du programme de formation Développeur Front-end JavaScript React chez [OpenClassrooms] 
 
-[Accès site] (https://danickdela.github.io/Kasa/)
+[Accès site] (https://kasa-three-gules.vercel.app/)
 
 
 #### Compétences développées :
