@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter basename="/Kasa">
       <Header />
       <main className="main">
         <Routes>
@@ -20,10 +20,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/apropos" element={<Apropos />} />
           <Route path="/annonce/:id" element={<Annonce />} />
           <Route path="/404" element={<Erreur />} />
-          <Route path="*" element={<Navigate to="/404" replace />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
 );
